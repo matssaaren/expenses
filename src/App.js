@@ -1,6 +1,6 @@
 import './App.css';
 import Expenses from './components/Expenses/Expenses'
-
+import NewExpense from './components/NewExpense/NewExpense'
 function App() {
   // Pooleli 7. Komponentide kompositsioon ja failis Card.js
   const expenses = [
@@ -19,8 +19,13 @@ function App() {
   ]
   
 
+  const addExpenseHandler = (expense) => {
+    console.log(expense)
+  }
+
   return (
     <div className="App">
+      <NewExpense onAddExpense={addExpenseHandler}/>
       <Expenses expenses={expenses} />
     </div>
   );
